@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="bookmark" href="favicon.ico" type="image/x-icon"　/>
+<title>Compressive spectral imaging techniques</title>
+<style>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.item img {
+  width: 600px;
+  height: 400px;
+  object-fit: contain;
+}
+
+.item p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+</style>
+<style>
+h1 {
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  width: 350px;
+  height: 70px;
+  background-image: url(rvc.png);
+  background-size: cover;
+}
+
+p {
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.picItem {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-right:20px;
+}
+
+.picItem p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+#layout-menu {
+  background-color:	#FCFCFC;
+  width: 200px;
+  height: 100%;
+}
+
+#layout-menu .main-menu {
+  margin: 20px 5px;
+  border-bottom: 1px solid 		#F2F2F2;
+}
+
+.menu-content div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#layout-menu div {
+  margin-top: 20px;
+}
+
+#layout-content {
+  padding: 0 15px;
+}
+.footer {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  background-color: #007BB5;
+}
+</style>
+
+<style>
+  body {
+    font-family: "Times New Roman", sans-serif;
+    font-size:20px;
+    margin: 0;
+  }
+</style>
+</head>
+
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+<td id="layout-menu">
+  <div class="menu-content">
+    <div>
+      <img src="ai.png" style="width: 80px; height: 80px;" />
+    </div>
+<!--    <div class="main-menu"> MENU </div>-->
+    <div class="menu-item"><a href="index.html" class="current">Home</a></div>
+    <div class="menu-item"><a href="https://github.com/">GitHub</a></div>
+    <div class="menu-item"><a href="http://robot.hnu.edu.cn/">RVC Lab</a></div>
+  </div>
+</td>
+<td id="layout-content">
+<div id="toptitle">
+<h1> Compressive Spectral Imaging （高光谱计算成像与分析）</h1>
+</div>
+<hr>
+<h2> Introduction of Hyperspectral Images </h2>
+<p> <font size="4"> Compared with the Red-Green-Blue (RGB) imaging system, hyperspectral imaging technique
+  is an advanced technique with the ability to capture spatial information across a broader
+  range of wavelengths, as shown in Fig. 1. Hyperspectral imaging technology is significant for vast applications,
+  such as remote sensing, medical diagnosis, and industrial inspection, as illusrated in Fig. 2.
+</p>
+<!--<p style="text-align:center;">-->
+<!--    <img src=overallv1.png width="1000px" height="447px"></p>-->
+
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=Fig1.bmp  width="600px" height="300px">
+    <p > Fig1: Comparison of imaging techniques and difference between RGB images and hyperspectral images. </p>
+  </div>
+  <div class="picItem">
+    <img src=Fig2.bmp  width="600px" height="295px">
+    <p > Fig2: Applications of hyperspectral images. </p>
+  </div>
+</div>
+
+
+<hr>
+<h2> Introduction of Hyperspectral Imaging Techniques </h2>
+<p> <font size="4"> For getting the spectral images, typical hyperspectral imaging systems are usually based on 1-dimensional (1D)
+  or 2-dimensional (2D) scanning mechanism, e.g., whiskbroom, pushbroom, and bandpass filters scanning spectrometer. Recently, snapshot
+  hyperspectral imaging techniques, especially, Compressive Spectral Imaging (CSI) or Spectral Compressive Imaging (SCI), has gained
+  considerable attention for its ability to simultaneously capture spatial and spectral information in a single or few exposures. The principle
+  of these four imaging techniques are listed in Fig. 3.
+</p>
+
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=Fig3.bmp  width="800px" height="200px">
+    <p > Fig3: Comparison of different hyperspectral imaging techniques. </p>
+  </div>
+</div>
+
+<hr>
+<h2> Introduction of Computational Spectral Imaging Technique </h2>
+<p> <font size="4"> Computational spectral imaging systems usually follows the `encode-decode' philosophy, which first encode the 3D spectral
+  image into a compressive measurement and then decode (reconstruction) it. With the advances in high-performance computational power,
+  the computational imaging technique has been attracting an increasing interest due to higher spatial and spectral resolutions.
+  With the merit of low cost, the Coded Aperture Snapshot Spectral Imaging (CASSI) spectrometer is one of the most representative systems among
+  the computational spectral imaging systems. In general, the typical CASSI systems include the Single-Disperser Coded Aperture Snapshot
+  Spectral Imaging (SD-CASSI) and Dual-Disperser Coded Aperture Snapshot Spectral Imaging (DD-CASSI). The forward observation model can be seen in
+  Fig. 4 (a)-(b). The computational spectral imaging can be formulated as an inverse imaging problem. Existing methods rely on selecting hand-crafted
+  pirors, such as total variation, low-rank and then construct a constrained optimization problem to reconstruct hyperspectral images.
+
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=Fig4.bmp  width="805px" height="620px">
+    <p > Fig4: (a) The forward observation model of SD-CASSI system; (b) the forward observation model of DD-CASSI. system (`spe.' denotes `spectral' and `spa.' represents `spatial' in the figure). </p>
+  </div>
+</div>
+
+
+<br>
+
+<br>
+There are some interesting and specific refereneces you can read.
+<br>
+[1] M. E. Gehm, R. John, D. J. Brady, et al., “Single-shot compressive spectral imaging with a dual-disperser architecture,” Optics Express,
+vol. 15, no. 21, pp. 14 013–14 027, 2007.
+<br>
+[2] G. R. Arce, D. J. Brady, L. Carin, et al., “Compressive coded aperture spectral imaging: An introduction,”  IEEE Signal Processing Magazine, vol. 31, no. 1, pp. 105–115, 2013
+<br>
+[3] L. Huang, R. Luo, X. Liu, et al., “Spectral imaging with deep learning,” Light: Science & Applications, vol. 11, no. 1, pp. 1–19, 2022.
+</p>
+
+
+<hr>
+<h2> Our Research </h2>
+<p> <font size="4"> [1] Yurong Chen, Yaonan Wang, Hui Zhang, “Prior Image Guided Snapshot Spectral Compressive Imaging,”
+  IEEE Transactions on Pattern Analysis and Machine Intelligence, 2023 (doi: 10.1109/TPAMI.2023.3265749). [Code:] https://github.com/YurongChen1998/Prior-Image-Guided-Snapshot-Spectral-Compressive-Imaging
+
+  <br>
+
+  <br>
+  [Abstract]: Spectral images with rich spatial and spectral information have wide usage, however, traditional spectral imaging techniques undeniably take a long time to capture scenes. We consider the computational imaging problem of the snapshot spectral spectrometer, i.e., the Coded Aperture Snapshot Spectral Imaging (CASSI) system. For the sake of a fast and generalized reconstruction algorithm, we propose a prior image guidance-based snapshot compressive imaging method. Typically, the prior image denotes the RGB measurement captured by the additional uncoded panchromatic camera of the dual-camera CASSI system. We argue that the RGB image as a prior image can provide valuable semantic information. More importantly, we design the Prior Image Semantic Similarity (PIDS) regularization term to enhance the reconstructed spectral image fidelity. In particular, the PIDS is formulated as the difference between the total variation of the prior image and the recovered spectral image. Then, we solve the PIDS regularized reconstruction problem by the Alternating Direction Method of Multipliers (ADMM) optimization algorithm. Comprehensive experiments on various datasets demonstrate the superior performance of our method.
+
+</p>
+
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=Fig5.bmp  width="920px" height="320px">
+    <p > Fig5: Prior image guided snapshot spectral compressive imaging. </p>
+  </div>
+</div>
+
+  <br>
+
+  <br>
+
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=Fig6.bmp  width="920px" height="320px">
+    <p > Fig6: The theoretical analysis of the proposed PIDS and the upper bound of the PIDS. </p>
+  </div>
+</div>
+  <br>
+
+  <br>
+  [Experiment results]: Results on the KAIST dataset.
+
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=Fig7.bmp  width="920px" height="620px">
+    <p > Fig6: The theoretical analysis of the proposed PIDS and the upper bound of the PIDS. </p>
+  </div>
+</div>
+<p> <font size="4"> [2] A. Yin et al. “SSAPN: Spectral-Spatial Anomaly Perception Network for Unsupervised Vaccine Detection”<p>
+<p> ” IEEE TII “A. Yin et al. “SSAPN: Spectral-Spatial Anomaly Perception Network for Unsupervised Vaccine Detection” 2022.<p>
+  <br>
+
+  <br>
+  </p>[Abstract]: Due to the high degree of maintenance of industrial medicine production and the difficulty of collecting fewer abnormal samples, we build a laboratory level hyperspectral medicine detection platform, construct a series of medical hyperspectral detection data sets, and carry out algorithm research</p>
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=AT1.png  width="920px" height="320px">
+    <p > Fig6: Established medical hyperspectral data set. </p>
+  </div>
+</div>
+
+  <br>
+
+  <br>
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=AT2.png  width="920px" height="320px">
+    <p > Fig7: Foreign object detection algorithm based on spatial spectral mapping. </p>
+  </div>
+</div>
+
+  <br>
+
+  <br>
+  [Experiment results]: Results on the  dataset.
+
+<div style="display: flex; justify-content: center;">
+  <div class="picItem">
+    <img src=AT3.png  width="920px" height="620px">
+    <p > Fig7: Hyperspectral foreign body test results. </p>
+  </div>
+</div>
+<hr>
+<h2>Acknowledgement （依托项目） </h2>
+<ul>
+<li><p> 高端医药光谱成像及智能检测分析仪器研制.（自科重大仪器项目）</p>
+</li>
+<li><p> 精密医药光谱图像感知与智能检测技术.（企业项目）</p>
+</li>
+</ul>
+<hr>
+<h2> Published Work </h2>
+<ol>
+<li><p> Yurong Chen, Yaonan Wang, Hui Zhang*, “Prior Image Guided Snapshot Spectral Compressive Imaging,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2023 (doi: 10.1109/TPAMI.2023.3265749). [<a href="https://github.com/YurongChen1998/Prior-Image-Guided-Snapshot-Spectral-Compressive-Imaging">Code</a>]</p>
+</ol>
+<!--<h3>Recent publications </h3>-->
+  <div style="display: flex;">
+  <div class="picItem">
+    <img src=f_joball.png width="350px" height="250px">
+    <p >For hyperspectral pharmaceutical industry, medical treatment</p>
+  </div>
+  <div class="picItem">
+    <img src=f_job1.png width="350px" height="300px">
+    <p >Hyperspectral medical lesion cell segmentation</p>
+  </div>
+  <div class="picItem">
+    <img src=f_job2.png width="300px" height="300px">
+    <p>Hyperspectral in vivo tumor segmentation</p>
+  </div>
+  <div class="picItem">
+    <img src=fjob_3.png width="350px" height="300px">
+    <p>Trace the origin of Chinese medicinal materials</p>
+  </div>
+</div>
+
+<h2>项目组成员</h2>
+  <div style="display: flex;">
+    <div class="picItem">
+      <img src=cyr.jpg width="160px" height="150px">
+      <p >陈煜嵘（在读）</p>
+      <p >博士二年级</p>
+    </div>
+    <div class="picItem">
+      <img src=llz.jpg width="120px" height="150px">
+      <p >刘立柱（在读）</p>
+      <p >博士二年级</p>
+    </div>
+  </div>
+<h2>Future research direction</h2>
+  <p>In the future, the project team will further carry out work in hyperspectral imaging, including but not limited to hyperspectral imaging system design, hyperspectral cell segmentation, living tumor segmentation, and origin tracing of biological reagents.
+<ul>
+  <h2>cooperation between school and enterprise</h2>
+    <div style="display: flex;">
+      <div class="picItem">
+        <img src=chutlogo.png width="250px" height="100px">
+        <p >楚天科技</p>
+      </div>
+      <div class="picItem">
+        <img src=sxlogoi.jpg width="350px" height="300px">
+        <p >圣湘生物</p>
+      </div>
+      <div class="picItem">
+        <img src=zllogo.jpg width="250px" height="120px">
+        <p >卓立汉光</p>
+      </div>
+      <div class="picItem">
+        <img src=zdlogo.jpg width="250x" height="100px">
+        <p >中达瑞和</p>
+      </div>
+    </div>
+  <p><b>如果您对此领域感兴趣并想加入我们的研究, 请联系我(chenyurong1998@outlook.com)或者张辉老师(zhanghuihby@126.com).谢谢!<b></p>
+</td>
+</tr>
+</table>
+<footer class="footer">
+  <div>
+    <p>National Engineering Research Center of Robot Vision Perception and Control Technology (RVC)</p>
+    <p>Hunan University</p>
+    <p>Changsha, Hunan, P.R. China</p>
+  </div>
+  <div>
+    <p>Copyright  RVC 2023</p>
+    <p>Above Site All right reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    var doc = document
+    function addScroll ()　{
+      var menu = doc.getElementsByClassName('menu-content')[0]
+      const top = doc.documentElement.scrollTop
+      menu.style= `margin-top: ${top}px` 
+    }
+
+    doc.addEventListener('scroll', addScroll.bind(this))
+  </script>
+</body>
+</html>
